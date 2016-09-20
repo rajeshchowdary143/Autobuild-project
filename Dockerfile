@@ -1,10 +1,10 @@
 FROM centos:7
 
-RUN yum -y install openssh-server && \
-    yum -y install git && \
-    yum -y install docker && \
-    yum -y install wget && \
-    yum clean all
+RUN yum -y install openssh-server \
+     git \
+     docker \
+     wget \
+     && yum clean all
   
 RUN echo "root:password" | chpasswd  
 RUN useradd jenkins  
